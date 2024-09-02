@@ -1,0 +1,14 @@
+name: azure-openai-project
+metadata:
+  template: azure-openai-template
+
+services:
+  webApp:
+    project: ./src  # Path to your application code
+    language: python
+    host: appservice
+
+infra:
+  provider: bicep
+  path: infra  # Path to your Bicep or Terraform files
+  module: main # Main module for Bicep or Terraform

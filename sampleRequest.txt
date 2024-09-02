@@ -1,0 +1,2 @@
+api-version: 2024-05-01-preview
+body: {"prompt":"ポーカーモルモット","n":1,"size":"1024x1024"}

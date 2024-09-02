@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        body {
+            position: relative;
+            margin: 0;
+            display: flex;
+            width: 297mm;
+            height: 210mm;
+            font-family:  'Noto Sans JP', sans-serif;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .frame {
+            width: 95%;
+            height: 90%;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .container {
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imgbox {
+            position: relative;
+            width: 100%;
+            height: 48%;
+            margin: 2% 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .imgbox::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            box-shadow: inset 0 0 10px 15px #FFF;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imgbox img {
+            width: 96%;
+            height: 96%;
+            object-fit: cover;
+        }
+
+        .right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+
+        .right p {
+            writing-mode: vertical-rl;
+            margin: 0;
+            text-align: left;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            padding-right: 20px;
+            font-size: 16px;
+        }
+
+        .url {
+            position: absolute;
+            font-size: 10pt;
+            right: 2.5%;
+            bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="frame">
+        <div class="container left">
+            <div class="imgbox">
+            <img id="img_1" src="" alt=""></div>
+            <div class="imgbox">
+            <img id="img_2" src="" alt=""></div>
+        </div>
+        <div class="container right">
+            <p>むかしむかし、深い森の中に、名をマルスという小さなキツネが住んでいました。マルスは探検が大好きで、毎日新しい冒険を夢見ていました。<br><br>ある晴れた朝、マルスは特別な地図を見つけました。その地図には、秘密の宝物が眠るという場所が示されていました。「これは素敵な冒険の始まりだ！」と、マルスは心を踊らせながら出発しました。<br><br>森を抜け、小川を渡り、険しい山を越えると、マルスは大きな洞窟にたどり着きました。洞窟の入り口には、輝く石がキラキラと光っていました。「ここに違いない！」そう思ったマルスは、勇気を振り絞って中へ進みました。<br><br>洞窟の中は暗く、ひんやりとしていました。しかし、マルスは怖がらずに前へと進みました。やがて、洞窟の奥に小さな光が見えました。近づいてみると、それは宝箱でした！マルスは大喜びで宝箱を開けました。<br><br>箱の中には、この世界のすべての動物たちの幸せを願う魔法の石が入っていました。マルスはその石を大切に持ち帰り、森のみんなに平和と幸せをもたらしました。<br><br>こうして、マルスの冒険はみんなにとっての素晴らしい伝説となり、森はいつまでも幸せに包まれました。</p>
+        </div>
+    </div>
+    <div id="url" class="url">https://unifamiday.blob.core.windows.net/images/JobID</div>
+</body>
+</html>

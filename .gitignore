@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyi
+*.egg-info/
+dist/
+build/
+*.egg
+*.log
+
+# Bicep
+*.json
+*.bicepbin
+*.lock
+*.lock.json
+*.deployment
+*.deployment.json
+*.pulumi
+*.pulumi.*.yaml
+*.pulumi.*.yml
+*.pulumi.*.json
+*.pulumi.*.js
+*.pulumi.*.ts
+*.pulumi.*.py
+
+# custom
+backup/*
+.mypy_cache
