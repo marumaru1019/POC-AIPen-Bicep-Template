@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": {
+      "value": "prod"
+    },
+    "location": {
+      "value": "eastus"
+    },
+    "resourceGroupName": {
+      "value": "rg-aipen"
+    },
+    "openAiServiceName1": {
+      "value": "openai-aipen-1"
+    },
+    "openAiServiceName2": {
+      "value": "openai-aipen-2"
+    },
+    "gptDeploymentCapacity": {
+      "value": 10
+    },
+    "dalleDeploymentCapacity": {
+      "value": 1
+    },
+    "appInsightsName": {
+      "value": "app-insights-aipen"
+    },
+    "appServiceName": {
+      "value": "appservice-aipen"
+    },
+    "appServicePlanName": {
+      "value": "appserviceplan-aipen"
+    },
+    "skuName": {
+      "value": "P1v2"
+    },
+    "apiPath": {
+      "value": "create-image"
+    },
+    "publisherEmail": {
+      "value": "contoso@microsoft.com"
+    },
+    "publisherName": {
+      "value": "Contoso"
+    },
+    "apiServiceName": {
+      "value": "poc-apim-samplesample23"
+    }
+  }
+}
