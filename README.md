@@ -20,8 +20,8 @@ git clone https://github.com/marumaru1019/POC-AIPen-Bicep-Template.git
 ```
 
 ### 2. main.parameters.jsonの編集
-`main.parameters.json`を編集して、デプロイするリソースの設定を行ってください。
-例で値が設定されていますが、説明に従って値を変更してください。
+`infra/main.parameters.json`を編集して、デプロイするリソースの設定を行ってください。
+例としてすでに値が設定されていますが、下記の説明に従って値を変更してください。
 
 ```:main.parameters.json
 {
@@ -34,7 +34,7 @@ git clone https://github.com/marumaru1019/POC-AIPen-Bicep-Template.git
     },
     "location": {
       "value": "eastus" 
-      // リソースを展開するリージョン (例: eastus, japaneast) を指定します。選択するリージョンにより、レイテンシーやサービス可用性が異なります。
+      // リソースを展開するリージョン (例: eastus, japaneast) を指定します。選択するリージョンにより、レイテンシーやサービス可用性が異なります。GPT-４o及びDALL·Eが使えるリージョンとして例ではeastusを指定しています。
     },
     "resourceGroupName": {
       "value": "rg-aipen" 
@@ -106,8 +106,16 @@ azd auth login
 azd up
 ```
 
-デプロイが完了すると以下のようなメッセージが表示されます。
+コマンドを実行すると下記のようなメッセージが表示されます。
+指示に従って環境名、サブスクリプション、リージョンを入力してください。
+```bash
+? Enter a new environment name: <任意の環境名を入力してください>
+? Select an Azure Subscription to use: <使用するサブスクリプションを選択してください>
+? Select an Azure location to use: <使用するリージョンを選択してください>
 ```
+
+デプロイには5-10分程度かかります。デプロイが完了すると、下記のようなメッセージが表示されます。
+```bash
 Deployment has completed successfully.
 ```
 
@@ -181,8 +189,28 @@ API Management の Policy に OpenAI API のキーを設定します。
 </on-error>
 ```
 
-Azure PortalにてPolicyを編集するか、再度`azd up`コマンドを実行してデプロイしてください。
+再度`azd up`コマンドを実行してデプロイしてください。
 
 ```bash
 azd up
 ```
+
+## 動作確認
+### 絵本生成APIの呼び出し
+`src/request.py`の`5行目`のurlをデプロイしたApp ServiceのURLに変更してください。
+```python:request.py
+url = "https://<app-service-name>.azurewebsites.net/create-image"
+```
+
+`src/request.py`を実行して、絵本生成APIを呼び出します。
+```bash
+cd src
+python src/request.py
+```
+
+実行が完了すると、`output.html`という名前のhtmlファイルが生成されます。ブラウザで開いて生成された絵本を確認してください。\
+下記のような絵本が生成されます。
+![image](https://github.com/user-attachments/assets/b7aef22e-5cb8-4ad7-8b35-24395eeb4c28)
+
+
+

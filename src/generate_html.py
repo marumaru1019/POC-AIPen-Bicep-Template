@@ -14,9 +14,9 @@ def test():
 def generate_html():
     data = request.json
     user_id = data.get('user_id')
-    is_commic = data.get('is_commic')
+    is_comic = data.get('is_comic')
     content = data.get('content')
-    if is_commic:
+    if is_comic:
         output_html_file_name = make_manga_html(user_id, content)
     else:
         output_html_file_name = make_ehon_html(user_id, content)
